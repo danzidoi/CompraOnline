@@ -1,0 +1,17 @@
+/BuyOnline-ejb/dist/
+/BuyOnline-ejb/build/
+/BuyOnline-war/build/
+/nbproject/private/
+/BuyOnline-war/nbproject/private/
+/BuyOnline-ejb/nbproject/private/
+/build/
+/BuyOnline-war/dist/
+/BuyOnline.Infraestrutura/build/
+/BuyOnline.Infraestrutura/nbproject/private/
+/BuyOnline.Infraestrutura/dist/
+/BuyOnline-ejb_1/nbproject/private/
+/BuyOnline-ejb_1/build/
+/BuyOnline-ejb_1/dist/
+/AplicacaoDeTeste/dist/
+/AplicacaoDeTeste/build/
+/AplicacaoDeTeste/nbproject/private/

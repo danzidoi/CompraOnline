@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition template="/templateMe.xhtml">
+            <ui:define name="body">
+                #{produtoWeb.buscarProduto(request.getParameter("id"))}
+                <c:set var="p" value="#{produtoWeb.produto}" />
+                P >> #{p.nome}
+
+                <div class="product_details">
+                    <div class="product_right">
+                        <div class="info">
+                            <span class="name">#{p.nome}</span><br />
+                            <h:form>
+                                <h:commandLink value="Adicionar para carrinho" action="#{carrinhoWeb.addProduto}">
+                                    <f:param name="id" value="#{p.id}" />
+                                </h:commandLink>
+                            </h:form>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="product_bottom">
+                        #{p.descricao}
+                    </div>
+                    <div class="clear"></div>
+                </div>   
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>

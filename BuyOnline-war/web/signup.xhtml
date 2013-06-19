@@ -1,0 +1,41 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/templateMe.xhtml">
+        <ui:define name="body">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span2">
+                        <!--/sidebarzinha-->
+                    </div>
+                    <div class="span10">
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Nome" for="nome" />
+                                <h:inputText id="nome" value="#{clienteWeb.cliente.nome}" />
+                                <h:outputLabel value="Email" for="email" />
+                                <h:inputText id="email" value="#{clienteWeb.cliente.email}" />
+                                <h:outputLabel value="Senha" for="senha" />
+                                <h:inputText id="senha" value="#{clienteWeb.cliente.senha}" />
+                                <h:outputLabel value="Telefone" for="telefone" />
+                                <h:inputText id="telefone" value="#{clienteWeb.cliente.telefone}" />
+                                <h:outputLabel value="Cpf" for="cpf" />
+                                <h:inputText id="cpf" value="#{clienteWeb.cliente.cpf}" />
+<!--                                <h:outputLabel value="Endereco" for="endereco" />
+                                    <h:selectOneMenu id="endereco" value="#{clienteController.selected.endereco}" >
+                                    <f:selectItems value="#{enderecoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>-->
+                            </h:panelGrid>
+                            <br />
+                            <h:commandButton value="Salvar" action="#{clienteWeb.criar}"  styleClass="btn btn-primary"/>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+

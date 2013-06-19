@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="BuyOnline-ejbPU" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>vocatore</jta-data-source>
+    <class>entity.Cliente</class>
+    <class>entity.Endereco</class>
+    <class>entity.Departamento</class>
+    <class>entity.Estoque</class>
+    <class>entity.EstoqueProduto</class>
+    <class>entity.Filial</class>
+    <class>entity.ListaDeDesejos</class>
+    <class>entity.Pedido</class>
+    <class>entity.PedidoProduto</class>
+    <class>entity.Produto</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+    <properties>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>

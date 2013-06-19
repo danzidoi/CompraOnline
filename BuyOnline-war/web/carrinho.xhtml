@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/templateMe.xhtml">
+        <ui:define name="body">
+            <div class="module" id="cart">
+                <div class="header">Carrinho</div>
+                <div class="body">
+                    <c:choose>
+                        <c:when test="#{carrinhoWeb.produtos.size()==0}">
+                            Carrinho esta vazio
+                        </c:when>
+                        <c:otherwise>
+                            <h:dataTable value="#{carrinhoWeb.produtos}" var="p" id="cart-products" columnClasses="nome,qtd">
+                                <h:column>
+                                    <h:link value="#{p.produto.nome}" outcome="produto.xhtml">
+                                        <f:param name="id" value="#{p.produto.id}" />
+                                    </h:link>
+                                </h:column>
+                                <h:column>
+                                    #{p.qtd}
+                                </h:column>
+                            </h:dataTable>
+                        </c:otherwise>
+                    </c:choose>
+                    <br /><br />
+                    <h:form>
+                        <h:commandButton value="Finalizar Compra" action="#{carrinhoWeb.finalizar}" styleClass="btn btn-primary" >
+                            <f:param name="id" value="#{LoginMB.cliente.id}" />
+                        </h:commandButton>
+                    </h:form>
+                </div>
+                <div class="bottom"></div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
